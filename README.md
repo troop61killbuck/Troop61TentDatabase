@@ -1,4 +1,4 @@
-#Troop 61 Tent Database
+### Troop 61 Tent Database
 - - - -
 
 ### Installing this application is fairly easy, just follow these steps:
