@@ -1,0 +1,43 @@
+<?php
+  $page_title = 'Scouts By Patrol Selection';
+  require_once('includes/load.php');
+  // Checkin What level user has permission to view this page
+   page_require_level(1);
+  $patrols = view_all_patrols();
+
+
+?>
+<?php include_once('layouts/header.php'); ?>
+  <div class="row">
+     <div class="col-md-12">
+       <?php echo display_msg($msg); ?>
+     </div>
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+<div class="pull-left">
+		<a href="scout.php" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Return To All Scouts</a></div>
+	</div>
+		<div class="panel-body">
+                    <table id="printTable" class="table table-bordered">
+
+            <tbody>
+<tr><td class="text-center"><a href=scout_patrol.php?patrol=Dragon>Dragon Patrol</a></td> </tr>
+<tr><td class="text-center"><a href=scout_patrol.php?patrol=Falcon>Falcon Patrol</a></td> </tr>
+<tr><td class="text-center"><a href=scout_patrol.php?patrol=Phoenix>Phoenix Patrol</a></td> </tr>
+<tr><td class="text-center"><a href=scout_patrol.php?patrol=Not+Assigned+To+A+Patrol>Not Assigned To A Patrol</a></td></tr>
+            </tbody>
+	  </table>    </div>
+  </div>
+  <?php include_once('layouts/footer.php'); ?>
+
+<script>
+function printDiv() {
+    newWin = window.open("tent_print.php");
+    setTimeout(function (){
+    newWin.print();
+    newWin.close();
+    window.location.reload();}, 250);
+}
+</script>
+
