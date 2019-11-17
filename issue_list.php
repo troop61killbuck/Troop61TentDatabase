@@ -25,8 +25,9 @@
               <tr>
                 <th class="text-center" style="width: 10%;">Tent Number</th>
                 <th class="text-center" style="width: 10%;">Assigned to Patrol</th>
-                <th class="text-center" style="width: 40%;">Scouts In Tent</th>
-                <th class="text-center" style="width: 40%;">Issues With Tent</th>
+                <th class="text-center" style="width: 60%;">Issues With Tent</th>
+                <th class="text-center" style="width: 10%;">Date Reported</th>
+                <th class="text-center" style="width: 10%;">Date Fixed</th>
               </tr>
             </thead>
             <tbody>
@@ -35,25 +36,6 @@
                 <td class="text-center"><?php echo remove_junk($tent['tent_number']); ?></td>
                 <td class="text-center"> <?php echo remove_junk($tent['assigned_to_patrol']); ?></td>
                 <td class="text-center"></td>
-                <td class="text-center"></td>
-              </tr>
-             <?php endforeach; ?>
-            </tbody>
-          </table>
-          <table class="table table-bordered" style="width:100%">
-            <thead>
-              <tr>
-                <th class="text-center" style="width: 25%;">Tent Number</th>
-                <th class="text-center" style="width: 25%;">Assigned to Patrol</th>
-                <th class="text-center" style="width: 25%;">Taken Home By</th>
-                <th class="text-center" style="width: 25%;">Date Returned</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($tents as $tent):?>
-              <tr>
-                <td class="text-center"><?php echo remove_junk($tent['tent_number']); ?></td>
-                <td class="text-center"> <?php echo remove_junk($tent['assigned_to_patrol']); ?></td>
                 <td class="text-center"></td>
                 <td class="text-center"></td>
               </tr>
@@ -69,7 +51,7 @@
 
 <script>
 function printDiv() {
-   newWin = window.open("tent_print_list.php");
+   newWin = window.open("issue_print_list.php");
     setTimeout(function (){
     newWin.print();
     newWin.close();

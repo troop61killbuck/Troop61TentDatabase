@@ -9,6 +9,8 @@
  $c_tent         = count_by_id('Tents');
  $c_patrol 	     = count_by_id('Patrols');
  $c_report 	     = count_by_id('Tent_Inventory');
+ $c_issues 	     = count_by_id('Tent_Issues');
+ $c_open_issues 	     = count_open_issues('Tent_Issues');
 ?>
 <?php include_once('layouts/header.php'); ?>
 
@@ -63,7 +65,28 @@
         </div>
        </div>
     </div>
-
+    <div class="col-md-3">
+       <div class="panel panel-box clearfix">
+         <div class="panel-icon pull-left bg-red">
+          <i class="glyphicon glyphicon-pencil"></i>
+        </div>
+        <div class="panel-value pull-right">
+          <h2 class="margin-top"> <?php  echo $c_issues['total']; ?> </h2>
+          <p class="text-muted">Reported Issues</p>
+        </div>
+       </div>
+    </div>
+    <div class="col-md-3">
+       <div class="panel panel-box clearfix">
+         <div class="panel-icon pull-left bg-blue">
+          <i class="glyphicon glyphicon-exclamation-sign"></i>
+        </div>
+        <div class="panel-value pull-right">
+          <h2 class="margin-top"> <?php  echo $c_open_issues['total']; ?> </h2>
+          <p class="text-muted">Open Issues</p>
+        </div>
+       </div>
+    </div>
 
   <div class="row">
 
