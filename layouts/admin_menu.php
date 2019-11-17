@@ -50,6 +50,7 @@
       <span>Report Management</span>
     </a>
 <ul class="nav submenu">
+	 <li><a href="scout_submitted_reports.php">Scout Submitted Reports<br>From JotForm</a></li>
       	 <li><a href="report.php">Manage Reports</a> </li>
       	 <li><a href="add_report.php">Add Report</a> </li>
   	 </ul>
@@ -70,7 +71,8 @@
       <span>Printable Lists</span>
     </a>
 <ul class="nav submenu">
-     	 <li><a href="tent_list.php">Blank Tent Lists</a> </li>
+     	 <li><a href="tent_list.php">Blank Tent Lists</a></li>
+     	 <li><a href="issue_list.php">Blank Issue Lists</a></li>
   	 </ul>
     </li>
  </ul>

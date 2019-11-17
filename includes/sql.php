@@ -165,6 +165,20 @@ function count_by_id($table){
   }
 }
 /*--------------------------------------------------------------*/
+/* Function for Count id  By table name
+/*--------------------------------------------------------------*/
+
+function count_open_issues($table){
+  global $db;
+  if(tableExists($table))
+  {
+    $sql    = "SELECT COUNT(id) AS total FROM $table WHERE date_fixed='0'";
+    $result = $db->query($sql);
+     return($db->fetch_assoc($result));
+  }
+}
+
+/*--------------------------------------------------------------*/
 /* Determine if database table exists
 /*--------------------------------------------------------------*/
 function tableExists($table){
