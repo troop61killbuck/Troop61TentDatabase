@@ -152,7 +152,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `user_level`, `image`, `status`, `last_login`, `reset_password`) VALUES
-(1, ' Admin User', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 0, '2fvh2f8r1.png', 1, '2019-11-04 16:59:35', '0'),
+(1, ' Admin User', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 0, 'no_image.jpg', 1, '2019-11-04 16:59:35', '0'),
 (12, 'Quartermaster User', 'quartermaster', 'b7643c9ca20a4a5b29338ce51e513637c4de81bd', 1, 'no_image.jpg', 1, '2019-11-04 17:53:32', '0'),
 (13, 'Patrol Leader User', 'pl', 'b7643c9ca20a4a5b29338ce51e513637c4de81bd', 2, 'no_image.jpg', 1, '2019-11-04 17:47:12', '0');
 
