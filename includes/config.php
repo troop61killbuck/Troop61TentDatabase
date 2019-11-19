@@ -21,9 +21,9 @@
 | Version: Troop 61 Tent Database
 | Troop Website: https://www.troop61killbuck.org/
 */
-  define( 'DB_HOST', 'host' );              // Set database host
-  define( 'DB_USER', 'username' );          // Set database user
-  define( 'DB_PASS', 'password' );          // Set database password
-  define( 'DB_NAME', 'databasename' );      // Set database name
+  define( 'DB_HOST', 'host' );              // Set database host where it says 'host'
+  define( 'DB_USER', 'username' );          // Set database user where it says 'username'
+  define( 'DB_PASS', 'password' );          // Set database password where it says 'password'
+  define( 'DB_NAME', 'databasename' );      // Set database name where it says 'databasename'
 
 ?>
