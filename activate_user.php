@@ -9,7 +9,7 @@
       $session->msg("s","User Activated.");
       redirect('users.php');
   } else {
-      $session->msg("d","User activation failed Or Missing Prm.");
+      $session->msg("d","User activation failed");
       redirect('users.php');
   }
 ?>
