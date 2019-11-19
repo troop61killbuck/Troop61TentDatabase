@@ -16,10 +16,10 @@
 5. Then log in by using one of the following logins, and the **username** and **password** in the corresponding fields:
 
 
-   Administrator        | Quartermaster User  | Patrol Leader User
-   ---------------------| --------------------| ---------------------
-   **Username** : admin | **Username** : test | **Username** : pl
-   **Password** : admin | **Password** : test | **Password** : test
+   Administrator            |Quartermaster User          |Patrol Leader User
+   -------------------------|----------------------------|---------------------
+   **Username** : admin     |**Username** : quartermaster|**Username** : patrolleader
+   **Password** : Eagle4061!|**Password** : Eagle4061!   |**Password** : Eagle4061!
 
 6. Good luck!  
 
