@@ -11,6 +11,12 @@
       <span>Patrol Management</span>
     </a>
   </li>
+<li>
+    <a href="campout.php">
+      <i class="glyphicon glyphicon-calendar"></i>
+      <span>Campout Management</span>
+    </a>
+  </li>
    <li>
 	<a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-plus"></i>
