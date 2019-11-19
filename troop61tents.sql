@@ -1,11 +1,6 @@
 -- phpMyAdmin SQL Dump
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Generation Time: Nov 04, 2019 at 11:03 PM
--- Server version: 8.0.13-4
--- PHP Version: 7.2.24-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -17,10 +12,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `TgaNN6RhpP`
---
 
 -- --------------------------------------------------------
 
@@ -162,8 +153,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `user_level`, `image`, `status`, `last_login`, `reset_password`) VALUES
 (1, ' Admin User', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 0, '2fvh2f8r1.png', 1, '2019-11-04 16:59:35', '0'),
-(12, 'Test', 'Test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 1, 'no_image.jpg', 1, '2019-11-04 17:53:32', '0'),
-(13, 'test pl', 'pl', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 2, 'no_image.jpg', 1, '2019-11-04 17:47:12', '0');
+(12, 'Quartermaster User', 'quartermaster', 'b7643c9ca20a4a5b29338ce51e513637c4de81bd', 1, 'no_image.jpg', 1, '2019-11-04 17:53:32', '0'),
+(13, 'Patrol Leader User', 'pl', 'b7643c9ca20a4a5b29338ce51e513637c4de81bd', 2, 'no_image.jpg', 1, '2019-11-04 17:47:12', '0');
 
 -- --------------------------------------------------------
 
