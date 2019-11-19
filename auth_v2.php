@@ -27,16 +27,16 @@ if (empty($errors)) {
                                      updateLastLogIn($user['id']);
 		                      // redirect user to group home page by user level
 						if ($user['user_level'] === '0') {
-                                         $session->msg("s", "Hello ".$user['username'].", Welcome to Troop 61.");
+                                         $session->msg("s", "Hello ".$user['username'].", Welcome to the Troop 61 Tent Database.");
                                          redirect('admin.php',false); }
                                     elseif ($user['user_level'] === '1') {
-                                         $session->msg("s", "Hello ".$user['username'].", Welcome to Troop 61.");
+                                         $session->msg("s", "Hello ".$user['username'].", Welcome to the Troop 61 Tent Database.");
                                          redirect('quartermaster.php',false); }
                                     elseif ($user['user_level'] === '2') {
-                                         $session->msg("s", "Hello ".$user['username'].", Welcome to Troop 61.");
+                                         $session->msg("s", "Hello ".$user['username'].", Welcome to the Troop 61 Tent Database.");
                                          redirect('home.php',false); }
                                     else {
-                                         $session->msg("s", "Hello ".$user['username'].", Welcome to Troop 61.");
+                                         $session->msg("s", "Hello ".$user['username'].", Welcome to the Troop 61 Tent Database.");
                                          redirect('home.php',false); }
 	                            }
 	                            }
