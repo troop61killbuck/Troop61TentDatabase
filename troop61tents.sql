@@ -23,7 +23,7 @@ CREATE TABLE `Campouts` (
   `id` int(11) UNSIGNED NOT NULL,
   `dates` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `location` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -34,7 +34,7 @@ CREATE TABLE `Campouts` (
 CREATE TABLE `Patrols` (
   `id` int(11) UNSIGNED NOT NULL,
   `names` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `Patrols`
