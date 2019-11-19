@@ -11,8 +11,9 @@ function find_all($table) {
      return find_by_sql("SELECT * FROM ".$db->escape($table));
    }
 }
+
 /*--------------------------------------------------------------*/
-/* Function for Perform queries
+/* Function for perform queries
 /*--------------------------------------------------------------*/
 function find_by_sql($sql)
 {
@@ -21,8 +22,9 @@ function find_by_sql($sql)
   $result_set = $db->while_loop($result);
  return $result_set;
 }
+
 /*--------------------------------------------------------------*/
-/*  Function for Find data from table by id
+/*  Function for find data from table by id
 /*--------------------------------------------------------------*/
 function find_by_id($table,$id)
 {
@@ -36,8 +38,9 @@ function find_by_id($table,$id)
             return null;
      }
 }
+
 /*--------------------------------------------------------------*/
-/*  Function for Find data from table by patrol
+/*  Function for find data from table by patrol
 /*--------------------------------------------------------------*/
 function find_by_patrol($table,$patrol)
 {
@@ -52,7 +55,7 @@ function find_by_patrol($table,$patrol)
 }
 
 /*--------------------------------------------------------------*/
-/* Function for Delete data from table by id
+/* Function for delete data from table by id
 /*--------------------------------------------------------------*/
 function delete_by_id($table,$id)
 {
@@ -66,6 +69,7 @@ function delete_by_id($table,$id)
     return ($db->affected_rows() === 1) ? true : false;
    }
 }
+
 /*--------------------------------------------------------------*/
 /* Function for edit active
 /*--------------------------------------------------------------*/
@@ -84,23 +88,7 @@ function edit_status_by_id($table,$id,$status)
 }
 
 /*--------------------------------------------------------------*/
-/* Function for edit active
-/*--------------------------------------------------------------*/
-function mark_reported($table,$id,$status)
-{
-  global $db;
-  if(tableExists($table))
-   {
-    $sql = "UPDATE ".$db->escape($table);
-    $sql .= " SET reported = '{$status}'";
-    $sql .= "  WHERE id=". $db->escape($id);
-    $sql .= " LIMIT 1";
-    $db->query($sql);
-    return ($db->affected_rows() === 1) ? true : false;
-   }
-}
-/*--------------------------------------------------------------*/
-/* Function for edit active
+/* Function for marking an issue as fixed
 /*--------------------------------------------------------------*/
 function mark_completed($table,$id,$status)
 {
@@ -115,9 +103,10 @@ function mark_completed($table,$id,$status)
     return ($db->affected_rows() === 1) ? true : false;
    }
 }
-/*--------------------------------------------------------------*/
-/* Function for edit active
-/*--------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------*/
+/* Function for forcing a user to reset their password upon their next login
+/*------------------------------------------------------------------------------*/
 function force_password_reset_by_id($table,$id)
 {
   global $db;
@@ -133,26 +122,7 @@ function force_password_reset_by_id($table,$id)
 }
 
 /*--------------------------------------------------------------*/
-/* Function for edit active
-/*--------------------------------------------------------------*/
-function after_password_reset_by_id($table,$id)
-{
-  global $db;
-  if(tableExists($table))
-   {
-
-    $sql = "UPDATE ".$db->escape($table);
-    $sql .= " SET reset_password = 0";
-    $sql .= "  WHERE id=". $db->escape($id);
-    $sql .= " LIMIT 1";
-    $db->query($sql);
-    return ($db->affected_rows() === 1) ? true : false;
-
-   }
-}
-
-/*--------------------------------------------------------------*/
-/* Function for Count id  By table name
+/* Function for count id  by table name
 /*--------------------------------------------------------------*/
 
 function count_by_id($table){
@@ -164,8 +134,10 @@ function count_by_id($table){
      return($db->fetch_assoc($result));
   }
 }
+
 /*--------------------------------------------------------------*/
-/* Function for Count id  By table name
+/* Function for count open issues by table name (issues table)
+/*     -Needed to make admin and quartermaster homepages work
 /*--------------------------------------------------------------*/
 
 function count_open_issues($table){
@@ -191,25 +163,7 @@ function tableExists($table){
               return false;
       }
   }
- /*--------------------------------------------------------------*/
- /* Login with the data provided in $_POST,
- /* coming from the login form.
-/*--------------------------------------------------------------*/
-  function authenticate($username='', $password='') {
-    global $db;
-    $username = $db->escape($username);
-    $password = $db->escape($password);
-    $sql  = sprintf("SELECT id,username,password,user_level,status FROM users WHERE username ='%s' LIMIT 1", $username);
-    $result = $db->query($sql);
-    if($db->num_rows($result)){
-      $user = $db->fetch_assoc($result);
-      $password_request = sha1($password);
-      if($password_request === $user['password'] ){
-        return $user['id'];
-      }
-    }
-   return false;
-  }
+
   /*--------------------------------------------------------------*/
   /* Login with the data provided in $_POST,
   /* coming from the login_v2.php form.
@@ -246,9 +200,9 @@ function tableExists($table){
       }
     return $current_user;
   }
+
   /*--------------------------------------------------------------*/
-  /* Find all user by
-  /* Joining users table and user gropus table
+  /* Find all user by joining users table and user gropus table
   /*--------------------------------------------------------------*/
   function find_all_user(){
       global $db;
@@ -275,7 +229,7 @@ function tableExists($table){
 	}
 
   /*--------------------------------------------------------------*/
-  /* Find all Group name
+  /* Find all group names
   /*--------------------------------------------------------------*/
   function find_by_groupName($val)
   {
@@ -285,7 +239,7 @@ function tableExists($table){
     return($db->num_rows($result) === 0 ? true : false);
   }
   /*--------------------------------------------------------------*/
-  /* Find all Group name
+  /* Find all active
   /*--------------------------------------------------------------*/
   function find_by_active($val)
   {
@@ -305,7 +259,7 @@ function tableExists($table){
     return($db->num_rows($result) === 0 ? true : false);
   }
   /*--------------------------------------------------------------*/
-  /* Function for cheaking which user level has access to page
+  /* Function for checking which user level has access to page
   /*--------------------------------------------------------------*/
    function page_require_level($require_level){
      global $session;
@@ -328,49 +282,10 @@ function tableExists($table){
         endif;
 
      }
-  /*--------------------------------------------------------------*/
-  /* Function for cheaking which user level has access to page
-  /*--------------------------------------------------------------*/
-   function check_deactive(){
-     global $session;
-     $current_user = current_user();
-     $active = find_by_active($current_user['status']);
-     //if user not login
-     if (!$session->isUserLoggedIn(true)):
-            $session->msg('d','Please login...');
-            redirect('index.php', false);
-      //if Group status Deactive
-     elseif($active['status'] === '0'):
-           $session->msg('d','This level user has been banned!');
-           redirect('home2.php',false);
-        endif;
 
-     }
-  /*--------------------------------------------------------------*/
-  /* Function for Finding all product name
-  /* Request coming from ajax.php for auto suggest
-  /*--------------------------------------------------------------*/
-
-   function find_product_by_title($product_name){
-     global $db;
-     $p_name = remove_junk($db->escape($product_name));
-     $sql = "SELECT name FROM products WHERE name like '%$p_name%' LIMIT 5";
-     $result = find_by_sql($sql);
-     return $result;
-   }
-
-  /*--------------------------------------------------------------*/
-  /* Function for Finding all product info by product title
-  /* Request coming from ajax.php
-  /*--------------------------------------------------------------*/
-  function find_all_product_info_by_title($title){
-    global $db;
-    $sql  = "SELECT * FROM products ";
-    $sql .= " WHERE name ='{$title}'";
-    $sql .=" LIMIT 1";
-    return find_by_sql($sql);
-  }
-
+/*--------------------------------------------------------------*/
+/* Function for the tent table (tent.php)
+/*--------------------------------------------------------------*/
 function join_tent_table_all(){
      	global $db;
      	$sql  =" SELECT id, tent_number, assigned_to_patrol, date";
@@ -379,6 +294,9 @@ function join_tent_table_all(){
     	return find_by_sql($sql);
    }
 
+/*--------------------------------------------------------------*/
+/* Function for loading issues with the tents (issues.php)
+/*--------------------------------------------------------------*/
 function tent_issues(){
      	global $db;
      	$sql  =" SELECT *";
@@ -386,13 +304,19 @@ function tent_issues(){
     	$sql  .=" ORDER BY date_fixed, date_added ASC";
     	return find_by_sql($sql);
    }
-   
+
+/*--------------------------------------------------------------*/
+/* Function for loading all patrols
+/*--------------------------------------------------------------*/   
 function view_all_patrols(){
      	global $db;
      	$sql  ="SELECT id, names FROM Patrols ORDER BY FIELD(names, 'Dragon', 'Falcon', 'Phoenix', 'Not Assigned To A Patrol')";
     	return find_by_sql($sql);
    }
-   
+
+/*------------------------------------------------------------------------*/
+/* Function for joining a different tent table, not ordered specific way
+/*------------------------------------------------------------------------*/   
 function join_tent_table($patrol){
      	global $db;
      	$sql  =" SELECT id, tent_number, assigned_to_patrol, date
@@ -402,6 +326,9 @@ function join_tent_table($patrol){
     	return find_by_sql($sql);
    }
 
+/*------------------------------------------------------------------------*/
+/* Function for joining a different tent table, this time for report page
+/*------------------------------------------------------------------------*/  
 function join_tent_table_report_2(){
      	global $db;
      	$sql  =" SELECT id, tent_number, assigned_to_patrol, date
@@ -410,6 +337,9 @@ function join_tent_table_report_2(){
     	return find_by_sql($sql);
    }
 
+/*------------------------------------------------------------------------*/
+/* Function for showing all scouts
+/*------------------------------------------------------------------------*/  
 function report_scouts(){
      	global $db;
      	$sql  =" SELECT id, first_name, last_name, patrol";
@@ -418,6 +348,9 @@ function report_scouts(){
     	return find_by_sql($sql);
    }
 
+/*------------------------------------------------------------------------*/
+/* Function for showing all tents
+/*------------------------------------------------------------------------*/
 function report_tents(){
      global $db;
      	$sql  =" SELECT id, tent_number, assigned_to_patrol";
@@ -426,6 +359,10 @@ function report_tents(){
     	return find_by_sql($sql);
 
    }
+
+/*------------------------------------------------------------------------*/
+/* Function for showing all campouts
+/*------------------------------------------------------------------------*/
     function report_campouts(){
      global $db;
      $sql  =" SELECT id, dates, location";
@@ -433,6 +370,9 @@ function report_tents(){
     return find_by_sql($sql);
    }
 
+/*------------------------------------------------------------------------*/
+/* Function for showing all reports
+/*------------------------------------------------------------------------*/
 function join_report_table(){
      global $db;
      $sql  =" SELECT id, tent_number, date_returned, campout, name, patrol, date
@@ -440,16 +380,10 @@ function join_report_table(){
 	ORDER BY date_returned, campout, patrol, tent_number ASC";
    	return find_by_sql($sql);
    }
-   
 
-function join_tent_report_table(){
-     global $db;
-     $sql  =" SELECT id, name, tent_number, patrol, campout, stakes, leg_poles, top_pole, rainfly_pole, plastic_connectors, tent, rainfly, tent_bag, pole_bag, stake_bag, other_issues, date, reported
-	FROM tent_reports WHERE reported='no'
-	ORDER BY date ASC";
-   	return find_by_sql($sql);
-   }
-     
+/*------------------------------------------------------------------------*/
+/* Function for showing all campout reports
+/*------------------------------------------------------------------------*/ 
 function join_campout_report(){
      global $db;
      $sql  =" SELECT id, dates, location
@@ -458,6 +392,9 @@ function join_campout_report(){
     return find_by_sql($sql);
 }
 
+/*------------------------------------------------------------------------*/
+/* Function for finding by dates
+/*------------------------------------------------------------------------*/
 function find_by_dates($table,$id){
   	global $db;
   	$id = (int)$id;
@@ -470,6 +407,9 @@ function find_by_dates($table,$id){
      }
 }
 
+/*------------------------------------------------------------------------*/
+/* Function for showing all reports by a specific scout
+/*------------------------------------------------------------------------*/
 function join_campout_report_scout($first, $last){
      global $db;
      $sql  =" SELECT *
@@ -479,6 +419,10 @@ function join_campout_report_scout($first, $last){
     return find_by_sql($sql);
 
    }
+
+/*------------------------------------------------------------------------*/
+/* Function for showing all reports by a specific campout
+/*------------------------------------------------------------------------*/
 function join_campout_report_campout($dates, $location){
      global $db;
      $sql  =" SELECT *
@@ -489,14 +433,19 @@ function join_campout_report_campout($dates, $location){
 
    }
 
-
+/*------------------------------------------------------------------------*/
+/* Function for showing all scouts by patrol
+/*------------------------------------------------------------------------*/
 function join_scout_table(){
     	global $db;
    	$sql  =" SELECT id, first_name, last_name, patrol, date FROM Scouts 
 	ORDER BY FIELD(patrol, 'Dragon', 'Falcon', 'Phoenix', 'Not Assigned To A Patrol'), last_name, first_name";
     	return find_by_sql($sql);
    }
-   
+
+/*------------------------------------------------------------------------*/
+/* Function for showing all scouts by a specific patrol
+/*------------------------------------------------------------------------*/   
 function join_scout_table_new($patrol){
     	global $db;
    	$sql  =" SELECT id, first_name, last_name, patrol, date FROM Scouts WHERE patrol='{$db->escape($patrol)}'
