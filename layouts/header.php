@@ -59,11 +59,11 @@
       <?php include_once('admin_menu.php');?>
 
       <?php elseif($user['user_level'] === '1'): ?>
-        <!-- admin menu -->
+        <!-- quartermaster menu -->
       <?php include_once('quartermaster_menu.php');?>
 
       <?php elseif($user['user_level'] === '2'): ?>
-        <!-- Special user -->
+        <!-- patrol leader user -->
       <?php include_once('patrol_leader_menu.php');?>
 
       <?php endif;?>
