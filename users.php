@@ -74,10 +74,12 @@
 <a href="delete_user.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
                   <i class="glyphicon glyphicon-remove"></i>
                 </a>
-                <a href="force_password_reset.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-xs btn-primary" data-toggle="tooltip" title="Force Password Reset On Next Login">
+                <?php if($a_user['reset_password'] === '0'): ?>
+<a href="force_password_reset.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-xs btn-primary" data-toggle="tooltip" title="Force Password Reset On Next Login">
                   <i class="glyphicon glyphicon-lock"></i>
                 </a>
-
+          <?php else: ?>
+          <?php endif;?>
                 </div>
            </td>
           </tr>
