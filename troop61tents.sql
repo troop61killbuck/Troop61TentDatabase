@@ -144,7 +144,7 @@ CREATE TABLE `users` (
   `image` varchar(255) NOT NULL DEFAULT 'no_image.jpg',
   `status` int(1) NOT NULL,
   `last_login` datetime DEFAULT NULL,
-  `reset_password` varchar(11) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '0'
+  `reset_password` INT(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
