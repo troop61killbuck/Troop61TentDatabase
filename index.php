@@ -20,7 +20,8 @@
         </div>
         <div class="form-group">
             <label for="Password" class="control-label">Password</label>
-            <input type="password" name= "password" class="form-control" placeholder="password">
+            <input type="password" name= "password" class="form-control" placeholder="Password" id="myInput"><br>
+            <input type="checkbox" onclick="showPassword()"> Show Password
         </div>
 <div class="text-center">
         <div class="form-group">
@@ -30,3 +31,14 @@
     </form>
 </div>
 <?php include_once('layouts/footer.php'); ?>
+
+<script>
+function showPassword() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
