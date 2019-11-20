@@ -1,5 +1,4 @@
 <?php
-  $page_title = 'Reports for Selected Scout';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
   page_require_level(1);
@@ -9,6 +8,7 @@
 <?php
   $scouts_id = find_by_id('Scouts', $_GET['id']);
   $campouts = join_campout_report_scout($scouts_id['first_name'], $scouts_id['last_name']);
+  $page_title = 'Reports for $scouts_id['first_name'], $scouts_id['last_name']';
 
 if(!$scouts_id){
   $session->msg("d","Missing Tent id.");

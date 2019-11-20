@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'Home Page';
+  $page_title = 'Patrol Leader / Standard User Home Page';
   require_once('includes/load.php');
   if (!$session->isUserLoggedIn(true)) { redirect('index.php', false);};
 ?>

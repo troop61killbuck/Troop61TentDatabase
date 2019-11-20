@@ -1,5 +1,4 @@
 <?php
-  $page_title = 'Print Reports By Scout';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
   page_require_level(3);
@@ -8,6 +7,7 @@
 <?php
   $scouts_id = find_by_id('Scouts', $_GET['id']);
   $campouts = join_campout_report_scout($scouts_id['first_name'], $scouts_id['last_name']);
+  $page_title = 'Print Reports For $scouts_id['first_name'], $scouts_id['last_name']';
 ?>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
