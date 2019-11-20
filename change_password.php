@@ -43,13 +43,15 @@
      </div>
      <?php echo display_msg($msg); ?>
       <form method="post" action="change_password.php" class="clearfix">
-        <div class="form-group">
+	        <div class="form-group">
               <label for="oldPassword" class="control-label">Old password</label>
-              <input type="password" class="form-control" name="old-password" placeholder="Old password">
+              <input type="password" class="form-control" name="old-password" placeholder="Old password"id="oldPassword"><br>
+            <input type="checkbox" onclick="showOldPassword()"> Show Password
         </div>
 	<div class="form-group">
               <label for="newPassword" class="control-label">New password</label>
-              <input type="password" class="form-control" name="new-password" placeholder="New password">
+              <input type="password" class="form-control" name="new-password" placeholder="New password"id="newPassword"><br>
+            <input type="checkbox" onclick="showNewPassword()"> Show Password
         </div>
 
         <div class="form-group clearfix">
@@ -59,3 +61,24 @@
     </form>
 </div>
 <?php include_once('layouts/footer.php'); ?>
+
+<script>
+function showOldPassword() {
+  var x = document.getElementById("oldPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+<script>
+function showNewPassword() {
+  var x = document.getElementById("newPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
