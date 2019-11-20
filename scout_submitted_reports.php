@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'Scout Submitted Tent Reports';
+  $page_title = 'Scout Submitted Tent Reports (from JotForm)';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
   page_require_level(1);

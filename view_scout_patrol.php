@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'View Scouts';
+  $page_title = 'View Scouts By Patrol';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
   page_require_level(3);

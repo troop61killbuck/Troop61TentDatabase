@@ -24,10 +24,10 @@
             $result = $db->query($sql);
                 if($result && $db->affected_rows() === 1):
                   $session->logout();
-                  $session->msg('s',"Login with your new password.");
+                  $session->msg('s',"Please login with your new password.");
                   redirect('index.php', false);
                 else:
-                  $session->msg('d',' Sorry failed to updated!');
+                  $session->msg('d',' Sorry failed to update password.');
                   redirect('force_password_reset_login.php', false);
                 endif;
     } else {

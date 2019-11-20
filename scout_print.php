@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'All Scouts';
+  $page_title = 'Print All Scouts';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
    page_require_level(3);

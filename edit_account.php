@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'Edit Account';
+  $page_title = 'Edit User Account';
   require_once('includes/load.php');
    page_require_level(3);
 ?>

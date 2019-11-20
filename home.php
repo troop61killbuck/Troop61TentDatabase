@@ -12,7 +12,7 @@
     <div class="panel">
       <div class="jumbotron text-center">
          <h1>Welcome to the Troop 61 Tent Database!</h1>
-		<p>Please use the navagation panel on the left side to navigate to where you are headed.</p>
+		<p>Please use the navagation panel on the left side to navigate to where you would like to go.</p>
       </div>
     </div>
  </div>
