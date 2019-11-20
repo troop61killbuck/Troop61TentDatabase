@@ -30,7 +30,7 @@
           redirect('group.php');
         } else {
           //failed
-          $session->msg('d',' Sorry failed to updated Group!');
+          $session->msg('d',' Sorry failed to updated group');
           redirect('group.php');
         }
    } else {
