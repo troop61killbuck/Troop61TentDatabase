@@ -120,7 +120,8 @@ if(isset($_POST['update-pass'])) {
         <form action="edit_user.php?id=<?php echo (int)$e_user['id'];?>" method="post" class="clearfix">
           <div class="form-group">
                 <label for="password" class="control-label">Password</label>
-                <input type="password" class="form-control" name="password" placeholder="Type user new password">
+                <input type="password" class="form-control" name="password" placeholder="Type user new password" id="newPassword"><br>
+            <input type="checkbox" onclick="showNewPassword()"> Show Password
           </div>
           <div class="form-group clearfix">
                   <button type="submit" name="update-pass" class="btn btn-danger pull-right">Change</button>
@@ -132,3 +133,14 @@ if(isset($_POST['update-pass'])) {
 
  </div>
 <?php include_once('layouts/footer.php'); ?>
+
+<script>
+function showNewPassword() {
+  var x = document.getElementById("newPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
