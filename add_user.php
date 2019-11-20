@@ -60,7 +60,8 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" name ="password"  placeholder="Password">
+                <input type="password" class="form-control" name ="password"  placeholder="Password" id="newPassword"><br>
+            <input type="checkbox" onclick="showNewPassword()"> Show Password
             </div>
             <div class="form-group">
               <label for="level">User Role</label>
@@ -82,3 +83,14 @@
   </div>
 
 <?php include_once('layouts/footer.php'); ?>
+
+<script>
+function showNewPassword() {
+  var x = document.getElementById("newPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
