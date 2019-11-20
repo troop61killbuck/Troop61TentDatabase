@@ -18,7 +18,7 @@
 |--------------------------------------------------------------------------
 | Author: Jack Veney - Troop 61
 | Project Name: Troop 61 Tent Database
-| Version: v1.3.0
+| Version: v1.3.1
 | Troop Website: https://www.troop61killbuck.org/
 */
   define( 'DB_HOST', 'host' );              // Set database host where it says 'host'

@@ -1,4 +1,5 @@
 <?php
+  $page_title = 'Print Reports For Selected Campout;
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
   page_require_level(3);
@@ -7,7 +8,7 @@
 <?php
   $campouts_id = find_by_id('Campouts', $_GET['id']);
   $campouts = join_campout_report_campout($campouts_id['dates'], $campouts_id['location']);
-  $page_title = 'Print Reports For $campouts_id['dates'], $campouts_id['location']';
+
 ?>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>

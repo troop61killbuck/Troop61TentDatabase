@@ -1,4 +1,5 @@
 <?php
+  $page_title = 'Reports for Selected Campout';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
   page_require_level(1);
@@ -8,7 +9,6 @@
 <?php
   $campouts_id = find_by_id('Campouts', $_GET['id']);
   $campouts = join_campout_report_campout($campouts_id['dates'], $campouts_id['location']);
-  $page_title = 'Reports for $campouts_id['dates'], $campouts_id['location']';
 
 if(!$campouts_id){
   $session->msg("d","Missing Tent id.");

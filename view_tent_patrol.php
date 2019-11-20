@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'View Tents Assigned To $_GET['patrol'] Patrol';
+  $page_title = 'View Tents Assigned To Selected Patrol';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
    page_require_level(3);
