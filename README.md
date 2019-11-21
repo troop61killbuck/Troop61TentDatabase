@@ -12,8 +12,7 @@
 3. Put the contents of Troop61TentDatabase in the root of the website
 
 4. Modify the includes/config.php and includes/dbConfig.php, changing the variables to match your host, database, username and passwords.
-
-The config.php is for the database to load into the website and the dbConfig.php allows the uploading of CSV files for adding users.
+-The config.php is for the database to load into the website and the dbConfig.php allows the uploading of CSV files for adding users.
 
 5. Then log in by using one of the following logins, and the **username** and **password** in the corresponding fields:
 
