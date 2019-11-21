@@ -1,6 +1,6 @@
 <?php
 // Load the database configuration file
-include_once 'dbConfig.php';
+include_once 'includes/dbConfig.php';
 ?>
 
 <div class="row">
