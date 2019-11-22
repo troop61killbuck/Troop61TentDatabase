@@ -7,7 +7,7 @@ include_once 'includes/dbConfig.php';
     <!-- Import link -->
     </div>
     <div class="col-md-12">
-        <form action="importData_user.php" method="post" enctype="multipart/form-data">
+        <form action="importData_scout.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <input type="file" name="file" class="btn btn-default btn-file"/>
               </div>
