@@ -6,20 +6,22 @@
   $all_scouts = report_scouts();
   $all_tents = report_tents();
   $all_campouts = report_campouts();
+  $all_patrols = view_all_patrols();
 ?>
 
 <?php
  if(isset($_POST['add_report'])){
-   $req_fields = array('scout-name', 'tent-number', 'campout');
+   $req_fields = array('scout-name', 'tent-number', 'campout', 'patrol');
    validate_fields($req_fields);
    if(empty($errors)){
      $s_name  = remove_junk($db->escape($_POST['scout-name']));
      $t_num  = remove_junk($db->escape($_POST['tent-number']));
      $camp  = remove_junk($db->escape($_POST['campout']));
+     $patrol = remove_junk($db->escape($_POST['patrol']));
      $date    = make_date();
 
      $query  = "INSERT INTO Tent_Inventory (tent_number, campout, name, patrol, date)
-VALUES ('{$t_num}', '{$camp}', '{$s_name}', 'Dragon', '{$date}');";
+VALUES ('{$t_num}', '{$camp}', '{$s_name}', '{$patrol}', '{$date}');";
      if($db->query($query)){
        $session->msg('s',"Report added ");
        redirect('report.php', false);
@@ -89,6 +91,19 @@ VALUES ('{$t_num}', '{$camp}', '{$s_name}', 'Dragon', '{$date}');";
                     <?php  foreach ($all_scouts as $scout): ?>
                       <option value="<?php echo $scout['first_name'] ?> <?php echo $scout['last_name'] ?>">
                         <?php echo $scout['first_name']?> <?php echo $scout['last_name'] ?></option>
+                    <?php endforeach; ?>
+                    </select>
+                  </div>
+                  </div>
+                  </div>
+              <div class="form-group">
+                <div class="row">
+			<div class="col-md-6">
+                    <select class="form-control" name="patrol">
+                      <option value="">Select Patrol Of Scout</option>
+                    <?php  foreach ($all_patrols as $patrol): ?>
+                      <option value="<?php echo $patrol['names']?>">
+                        <?php echo $patrol['names']?></option>
                     <?php endforeach; ?>
                     </select>
                   </div>
