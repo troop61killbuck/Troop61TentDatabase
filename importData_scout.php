@@ -23,8 +23,9 @@ if(isset($_POST['importSubmit'])){
             while(($line = fgetcsv($csvFile)) !== FALSE){
                 // Get row data
                 $f_name   = $line[0];
-                $l_name  = $line[1];
-                $patrol  = sha1($line[2]);
+                $last_name  = $line[1];
+                $l_name = substr("$last_name",0,1);
+                $patrol  = $line[2];
                 $date = strftime("%Y-%m-%d %H:%M:%S", time());
                 
                 // Check whether member already exists in the database with the same email

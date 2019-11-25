@@ -20,7 +20,7 @@
 
 <?php
 if(isset($_POST['edit_rep'])){
-  $req_fields = array('scout-name', 'tent-number', 'campout', 'patrol', 'date-returned');
+  $req_fields = array('scout-name', 'tent-number', 'campout', 'patrol');
    validate_fields($req_fields);
      $s_name  = remove_junk($db->escape($_POST['scout-name']));
      $t_num  = remove_junk($db->escape($_POST['tent-number']));
@@ -76,15 +76,19 @@ if(isset($_POST['edit_rep'])){
                   </div>
               <div class="form-group">
                 <div class="row">
-			<div class="col-md-6">
-                    <input class="form-control" name="date-returned" placeholder="Please Type Date Tent Was Returned">
-                    </input>
+      <div class="col-md-6">
+        <div class="input-group date" data-provide="datepicker">
+              <input type="text" class="form-control" name="date-returned" value="<?php echo remove_junk($tent_inv['date_returned']); ?>">
+                <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+               </div>
+        </div>
                   </div>
-			</div>
+      </div>
                   </div>
               <div class="form-group">
                 <div class="row">
-			<div class="col-md-6">
+      <div class="col-md-6">
                     <select class="form-control" name="campout">
                       <option value="<?php echo remove_junk($tent_inv['campout']); ?>"><?php echo remove_junk($tent_inv['campout']); ?></option>
                     <?php  foreach ($all_campouts as $campout): ?>                  
@@ -93,11 +97,11 @@ if(isset($_POST['edit_rep'])){
                     <?php endforeach; ?>
                     </select>
                   </div>
-			</div>
+      </div>
                   </div>
               <div class="form-group">
                 <div class="row">
-			<div class="col-md-6">
+      <div class="col-md-6">
                     <select class="form-control" name="scout-name">
                       <option value="<?php echo remove_junk($tent_inv['name']); ?>"><?php echo remove_junk($tent_inv['name']); ?></option>
                     <?php  foreach ($all_scouts as $scout): ?>
@@ -110,7 +114,7 @@ if(isset($_POST['edit_rep'])){
                   </div>
                   <div class="form-group">
                 <div class="row">
-			<div class="col-md-6">
+      <div class="col-md-6">
                     <select class="form-control" name="patrol">
                       <option value="<?php echo remove_junk($tent_inv['patrol']); ?>"><?php echo remove_junk($tent_inv['patrol']); ?></option>
                     <?php  foreach ($all_patrols as $patrol): ?>
@@ -131,3 +135,11 @@ if(isset($_POST['edit_rep'])){
 
 
 <?php include_once('layouts/footer.php'); ?>
+
+  <script>
+$('.datepicker').datepicker({
+    startDate: '-3d',
+    autoclose: true,
+
+});
+  </script>

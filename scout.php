@@ -15,11 +15,12 @@
       <div class="panel panel-default">
         <div class="panel-heading clearfix">
          <div class="pull-right">
-           <a href="add_scout.php" class="btn btn-primary">Add New</a><br><br>
-	     <a href="scout_select_patrol.php" class="btn btn-primary">View By Patrol</a>
+           <a href="add_scout.php" class="btn btn-info pull-right">Add New</a><br><br>
+         <a href="add_scout_csv.php" class="btn btn-info pull-right">Add New Scout By Uploading A CSV File</a><br><br>
+       <a href="scout_select_patrol.php" class="btn btn-info pull-right">View By Patrol</a>
          </div>
    <div class="pull-left">
-		<button onclick="printDiv()" class="btn btn-primary">PRINT THIS PAGE</button>
+    <button onclick="printDiv()" class="btn btn-primary">PRINT THIS PAGE</button>
         </div>
         </div>
         <div class="panel-body">
