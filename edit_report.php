@@ -11,6 +11,7 @@
   $all_tents = report_tents();
   $all_campouts = report_campouts();
   $reports = join_report_table();
+  $all_patrols = view_all_patrols();
   if(!$tent_inv){
     $session->msg("d","Missing Tent Inventory ID");
     redirect('report.php');
@@ -19,14 +20,15 @@
 
 <?php
 if(isset($_POST['edit_rep'])){
-  $req_fields = array('scout-name', 'tent-number', 'campout', 'date-returned');
+  $req_fields = array('scout-name', 'tent-number', 'campout', 'patrol', 'date-returned');
    validate_fields($req_fields);
      $s_name  = remove_junk($db->escape($_POST['scout-name']));
      $t_num  = remove_junk($db->escape($_POST['tent-number']));
      $camp  = remove_junk($db->escape($_POST['campout']));
+     $patrol = remove_junk($db->escape($_POST['patrol']));
      $date_returned  = remove_junk($db->escape($_POST['date-returned']));
    if(empty($errors)){
-        $sql = "UPDATE Tent_Inventory SET tent_number='{$t_num}', date_returned='{$date_returned}', campout='{$camp}', name='{$s_name}'";
+        $sql = "UPDATE Tent_Inventory SET tent_number='{$t_num}', patrol='{$patrol}', date_returned='{$date_returned}', campout='{$camp}', name='{$s_name}'";
        $sql .= " WHERE id='{$tent_inv['id']}'";
      $result = $db->query($sql);
      if($result && $db->affected_rows() === 1) {
@@ -101,6 +103,19 @@ if(isset($_POST['edit_rep'])){
                     <?php  foreach ($all_scouts as $scout): ?>
                       <option value="<?php echo $scout['name'] ?>">
                         <?php echo $scout['name']?></option>
+                    <?php endforeach; ?>
+                    </select>
+                  </div>
+                  </div>
+                  </div>
+                  <div class="form-group">
+                <div class="row">
+			<div class="col-md-6">
+                    <select class="form-control" name="patrol">
+                      <option value="<?php echo remove_junk($tent_inv['patrol']); ?>"><?php echo remove_junk($tent_inv['patrol']); ?></option>
+                    <?php  foreach ($all_patrols as $patrol): ?>
+                      <option value="<?php echo $patrol['names']?>">
+                        <?php echo $patrol['names']?></option>
                     <?php endforeach; ?>
                     </select>
                   </div>
