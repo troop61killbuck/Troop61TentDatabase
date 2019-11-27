@@ -57,7 +57,7 @@ VALUES ('{$t_num}', '{$t_pat}', '{$date}');";
                   <span class="input-group-addon">
                    <i class="glyphicon glyphicon-th-large"></i>
                   </span>
-                  <input type="text" class="form-control" name="tent-number" placeholder="Tent Name">
+                  <input type="text" class="form-control" name="tent-number" placeholder="Tent Number">
                </div>
               </div>
               <div class="form-group">
