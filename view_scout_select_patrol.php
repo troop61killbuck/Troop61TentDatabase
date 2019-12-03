@@ -3,7 +3,7 @@
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
    page_require_level(3);
-  $patrols = view_all_patrols();
+  $scouts = view_all_patrols();
 
 
 ?>
@@ -16,18 +16,21 @@
       <div class="panel panel-default">
         <div class="panel-heading clearfix">
 <div class="pull-left">
-		<a href="view_scout.php" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Return To All Scouts</a></div>
-	</div>
-		<div class="panel-body">
+    <a href="view_scout.php" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Return To All Scouts</a></div>
+  </div>
+    <div class="panel-body">
                     <table id="printTable" class="table table-bordered">
 
             <tbody>
-<tr><td class="text-center"><a href=view_scout_patrol.php?patrol=Dragon>Dragon Patrol</a></td> </tr>
-<tr><td class="text-center"><a href=view_scout_patrol.php?patrol=Falcon>Falcon Patrol</a></td> </tr>
-<tr><td class="text-center"><a href=view_scout_patrol.php?patrol=Phoenix>Phoenix Patrol</a></td> </tr>
-<tr><td class="text-center"><a href=view_scout_patrol.php?patrol=Not+Assigned+To+A+Patrol>Not Assigned To A Patrol</a></td></tr>
-            </tbody>
-	  </table>    </div>
+<?php foreach ($scouts as $scout):?>
+
+<tr>
+<td class="text-center"><a href=scout_patrol.php?patrol=<?php echo remove_junk(urlencode($scout['names'])); ?>><?php echo remove_junk($scout['names']); ?></a></td> 
+</tr>
+<?php endforeach; ?>
+      </tbody>
+
+    </table>    </div>
   </div>
   <?php include_once('layouts/footer.php'); ?>
 
