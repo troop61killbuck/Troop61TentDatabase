@@ -6,6 +6,8 @@
 ?>
 <?php
 $tent = find_by_id('Tents',(int)$_GET['id']);
+  $all_patrols = find_all('Patrols');
+
 
 if(!$tent){
   $session->msg("d","Missing Tent id.");
@@ -69,14 +71,13 @@ WHERE id = {$tent['id']}";
               <div class="form-group">
                 <div class="row">
                   <div class="col-md-6">
-			  <select class="form-control" name="tent-patrol">
-                      <option value="">Select Tent's Patrol</option>
-			    <option value="Not Assigned To A Patrol">Not Assigned To A Patrol</option>
-			    <option value="Dragon">Dragon</option>
-			    <option value="Falcon">Falcon</option>
-			    <option value="Phoenix">Phoenix</option>
+        <select class="form-control" name="tent-patrol">
+          <option value="<?php echo $scout['assigned_to_patrol'] ?>"><?php echo remove_junk($tent['assigned_to_patrol']); ?></option>
+        <?php  foreach ($all_patrols as $pat): ?>
+        <option value="<?php echo $pat['names'] ?>"><?php echo $pat['names'] ?></option>
+                    <?php endforeach; ?>
                     </select>
-			</div>
+      </div>
               <button type="submit" name="tent" class="btn btn-danger">Update</button>
           </form>
          </div>

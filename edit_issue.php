@@ -63,7 +63,7 @@ if(isset($_POST['edit_issues'])){
                 <div class="row">
                   <div class="col-md-6">
                     <select class="form-control" name="tent-number">
-                      <option value="">Select Tent Number</option>
+                      <option value="<?php echo $tent_inv['tent_number'] ?>"><?php echo remove_junk($tent_inv['tent_number']); ?></option>
                     <?php  foreach ($all_tents as $tent): ?>
                       <option value="<?php echo $tent['tent_number'] ?>">
                         <?php echo $tent['tent_number'] ?></option>
@@ -74,7 +74,7 @@ if(isset($_POST['edit_issues'])){
                   </div>
               <div class="form-group">
                 <div class="row">
-			<div class="col-md-6">
+      <div class="col-md-6">
                     <input type="text" class="form-control" name="issue" value="<?php echo remove_junk(ucwords($tent_inv['issue'])); ?>">
                   </div>
                   </div>
