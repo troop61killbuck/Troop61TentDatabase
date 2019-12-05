@@ -22,8 +22,8 @@
           <span class="glyphicon glyphicon-th"></span>
           <span>Users</span>
        </strong>
-         <a href="add_user.php" class="btn btn-info pull-right">Add New User</a><br><br>
-	   <a href="add_user_csv.php" class="btn btn-info pull-right">Add New User By Uploading A CSV File</a>
+         <a href="add_user.php" class="btn btn-primary pull-right">Add New User</a><br><br>
+	   <a href="add_user_csv.php" class="btn btn-primary pull-right">Add New User By Uploading A CSV File</a>
       </div>
      <div class="panel-body">
       <table class="table table-bordered table-striped">
