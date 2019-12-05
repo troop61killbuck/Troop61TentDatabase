@@ -15,8 +15,9 @@
       <div class="panel panel-default">
         <div class="panel-heading clearfix">
          <div class="pull-right">
-           <a href="add_tent.php" class="btn btn-primary">Add New</a><br><br>
-	     <a href="tent_select_patrol.php" class="btn btn-primary">View By Patrol</a>
+           <a href="add_tent.php" class="btn btn-primary pull-right">Add New</a><br><br>
+           <a href="add_scout_csv.php" class="btn btn-primary pull-right">Add New Scout By Uploading A CSV File</a><br><br>
+	     <a href="tent_select_patrol.php" class="btn btn-primary pull-right">View By Patrol</a>
          </div>
          <div class="pull-left">
 		<button onclick="printDiv()" class="btn btn-primary">PRINT THIS PAGE</button>
@@ -69,4 +70,3 @@ function printDiv() {
     window.location.reload();}, 250);
 }
 </script>
-
