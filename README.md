@@ -1,6 +1,28 @@
 # Troop 61 Tent Database
 - - - -
+![GitHub followers](https://img.shields.io/github/followers/jackveney?label=Follow&style=social)
+![GitHub forks](https://img.shields.io/github/forks/jackveney/troop61tentdatabase?style=social)
+![GitHub stars](https://img.shields.io/github/stars/jackveney/troop61tentdatabase?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/jackveney/troop61tentdatabase?style=social)
+![GitHub All Releases](https://img.shields.io/github/downloads/jackveney/Troop61TentDatabase/total)
 
+![GitHub](https://img.shields.io/github/license/jackveney/troop61tentdatabase)
+
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/jackveney/troop61tentdatabase?include_prereleases)
+![GitHub Release Date](https://img.shields.io/github/release-date/jackveney/troop61tentdatabase)
+![GitHub last commit](https://img.shields.io/github/last-commit/jackveney/troop61tentdatabase)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/jackveney/Troop61TentDatabase)
+
+![GitHub issues](https://img.shields.io/github/issues-raw/jackveney/troop61tentdatabase)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/jackveney/troop61tentdatabase)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/jackveney/troop61tentdatabase)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/jackveney/troop61tentdatabase)
+
+![GitHub language count](https://img.shields.io/github/languages/count/jackveney/troop61tentdatabase)
+![GitHub top language](https://img.shields.io/github/languages/top/jackveney/troop61tentdatabase)
+
+- - - -
 ### Installing this application is fairly easy, just follow these steps:
 ****
 
