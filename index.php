@@ -6,11 +6,14 @@
 ?>
 <?php include_once('layouts/header.php'); ?>
 <div class="login-page">
-	
 <div class="text-center">
 <img src="logo/Troop61.png" width="35%" height="35%">
        <h1>Welcome</h1>
        <p>Sign in to Start Your Session</p>
+<div class="alert alert-warning">
+  <strong>Alert!</strong> This is a testing site only.
+</div>
+
      </div>
      <?php echo display_msg($msg); ?>
       <form method="post" action="auth_v2.php" class="clearfix">

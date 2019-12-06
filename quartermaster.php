@@ -7,10 +7,10 @@
 <?php
  $c_scout         = count_by_id('Scouts');
  $c_tent         = count_by_id('Tents');
- $c_patrol       = count_by_id('Patrols');
- $c_report       = count_by_id('Tent_Inventory');
- $c_issues       = count_by_id('Tent_Issues');
- $c_open_issues        = count_open_issues('Tent_Issues');
+ $c_patrol 	     = count_by_id('Patrols');
+ $c_report 	     = count_by_id('Tent_Inventory');
+ $c_issues 	     = count_by_id('Tent_Issues');
+ $c_open_issues 	     = count_open_issues('Tent_Issues');
 ?>
 <?php include_once('layouts/header.php'); ?>
 

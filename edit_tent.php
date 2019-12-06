@@ -71,13 +71,13 @@ WHERE id = {$tent['id']}";
               <div class="form-group">
                 <div class="row">
                   <div class="col-md-6">
-        <select class="form-control" name="tent-patrol">
-          <option value="<?php echo $scout['assigned_to_patrol'] ?>"><?php echo remove_junk($tent['assigned_to_patrol']); ?></option>
-        <?php  foreach ($all_patrols as $pat): ?>
-        <option value="<?php echo $pat['names'] ?>"><?php echo $pat['names'] ?></option>
+			  <select class="form-control" name="tent-patrol">
+			    <option value="<?php echo $scout['assigned_to_patrol'] ?>"><?php echo remove_junk($tent['assigned_to_patrol']); ?></option>
+				<?php  foreach ($all_patrols as $pat): ?>
+				<option value="<?php echo $pat['names'] ?>"><?php echo $pat['names'] ?></option>
                     <?php endforeach; ?>
                     </select>
-      </div>
+			</div>
               <button type="submit" name="tent" class="btn btn-danger">Update</button>
           </form>
          </div>

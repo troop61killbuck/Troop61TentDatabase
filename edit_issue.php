@@ -74,7 +74,7 @@ if(isset($_POST['edit_issues'])){
                   </div>
               <div class="form-group">
                 <div class="row">
-      <div class="col-md-6">
+			<div class="col-md-6">
                     <input type="text" class="form-control" name="issue" value="<?php echo remove_junk(ucwords($tent_inv['issue'])); ?>">
                   </div>
                   </div>

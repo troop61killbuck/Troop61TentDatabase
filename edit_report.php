@@ -76,19 +76,19 @@ if(isset($_POST['edit_rep'])){
                   </div>
               <div class="form-group">
                 <div class="row">
-      <div class="col-md-6">
-        <div class="input-group date" data-provide="datepicker">
-              <input type="text" class="form-control" name="date-returned" value="<?php echo remove_junk($tent_inv['date_returned']); ?>">
-                <div class="input-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-               </div>
-        </div>
+			<div class="col-md-6">
+				<div class="input-group date" data-provide="datepicker">
+    					<input type="text" class="form-control" name="date-returned" value="<?php echo remove_junk($tent_inv['date_returned']); ?>">
+    						<div class="input-group-addon">
+       						<span class="glyphicon glyphicon-calendar"></span>
+   						 </div>
+				</div>
                   </div>
-      </div>
+			</div>
                   </div>
               <div class="form-group">
                 <div class="row">
-      <div class="col-md-6">
+			<div class="col-md-6">
                     <select class="form-control" name="campout">
                       <option value="<?php echo remove_junk($tent_inv['campout']); ?>"><?php echo remove_junk($tent_inv['campout']); ?></option>
                     <?php  foreach ($all_campouts as $campout): ?>                  
@@ -97,11 +97,11 @@ if(isset($_POST['edit_rep'])){
                     <?php endforeach; ?>
                     </select>
                   </div>
-      </div>
+			</div>
                   </div>
               <div class="form-group">
                 <div class="row">
-      <div class="col-md-6">
+			<div class="col-md-6">
                     <select class="form-control" name="scout-name">
                       <option value="<?php echo remove_junk($tent_inv['name']); ?>"><?php echo remove_junk($tent_inv['name']); ?></option>
                     <?php  foreach ($all_scouts as $scout): ?>
@@ -114,7 +114,7 @@ if(isset($_POST['edit_rep'])){
                   </div>
                   <div class="form-group">
                 <div class="row">
-      <div class="col-md-6">
+			<div class="col-md-6">
                     <select class="form-control" name="patrol">
                       <option value="<?php echo remove_junk($tent_inv['patrol']); ?>"><?php echo remove_junk($tent_inv['patrol']); ?></option>
                     <?php  foreach ($all_patrols as $patrol): ?>

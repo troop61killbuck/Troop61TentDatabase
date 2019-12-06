@@ -1,9 +1,9 @@
 <?php
 // Database configuration
-$dbHost     = "host"; 				// Set database host where it says 'host'
-$dbUsername = "username";			// Set database user where it says 'username'
-$dbPassword = "password";			// Set database password where it says 'password'
-$dbName     = "databasename";		// Set database name where it says 'databasename'
+$dbHost     = "sql101.byethost.com"; 				// Set database host where it says 'host'
+$dbUsername = "b18_24837584";			// Set database user where it says 'username'
+$dbPassword = "Pikes14,110";			// Set database password where it says 'password'
+$dbName     = "b18_24837584_Troop61TentDatabase";		// Set database name where it says 'databasename'
 
 // Create database connection
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

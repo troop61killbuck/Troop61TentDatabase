@@ -50,23 +50,23 @@
         <div class="panel-body">
           <form method="post" action="campout.php">
             <div class="form-group">
-      <div class="input-group date" data-provide="datepicker">
-            <input type="text" class="form-control" name="campout-start-date" placeholder="Campout Start Date">
-              <div class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </div>
-      </div>
-    </div>
+			<div class="input-group date" data-provide="datepicker">
+    				<input type="text" class="form-control" name="campout-start-date" placeholder="Campout Start Date">
+    					<div class="input-group-addon">
+       					<span class="glyphicon glyphicon-calendar"></span>
+   					</div>
+			</div>
+		</div>
             <div class="form-group">
-      <div class="input-group date" data-provide="datepicker">
-            <input type="text" class="form-control" name="campout-end-date" placeholder="Campout End Date">
-              <div class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </div>
-      </div>
-    </div>
+			<div class="input-group date" data-provide="datepicker">
+    				<input type="text" class="form-control" name="campout-end-date" placeholder="Campout End Date">
+    					<div class="input-group-addon">
+       					<span class="glyphicon glyphicon-calendar"></span>
+   					</div>
+			</div>
+		</div>
             <div class="form-group">
-        <input type="text" class="form-control" name="campout-location" placeholder="Campout Location">
+		    <input type="text" class="form-control" name="campout-location" placeholder="Campout Location">
             </div>
             <button type="submit" name="add_camp" class="btn btn-primary">Add Campout</button>
         </form>
@@ -87,7 +87,7 @@
                 <tr>
                     <th class="text-center" style="width: 50px;">#</th>
                     <th class="text-center">Campout Dates</th>
-        <th class="text-center">Campout Location</th>
+			  <th class="text-center">Campout Location</th>
                     <th class="text-center" style="width: 100px;">Actions</th>
                 </tr>
             </thead>
@@ -96,7 +96,7 @@
                 <tr>
                     <td class="text-center"><?php echo count_id();?></td>
                     <td class="text-center"><?php echo remove_junk(ucfirst($camp['dates'])); ?></td>
-        <td class="text-center"><?php echo remove_junk(ucfirst($camp['location'])); ?></td>
+			  <td class="text-center"><?php echo remove_junk(ucfirst($camp['location'])); ?></td>
                     <td class="text-center">
                       <div class="btn-group">
                         <a href="edit_campout.php?id=<?php echo (int)$camp['id'];?>"  class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">

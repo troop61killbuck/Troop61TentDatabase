@@ -16,9 +16,9 @@
       <div class="panel panel-default">
         <div class="panel-heading clearfix">
 <div class="pull-left">
-    <a href="scout.php" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Return To All Scouts</a></div>
-  </div>
-    <div class="panel-body">
+		<a href="scout.php" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-left"></i> Return To All Scouts</a></div>
+	</div>
+		<div class="panel-body">
                     <table id="printTable" class="table table-bordered">
 
             <tbody>
@@ -29,7 +29,7 @@
 </tr>
 <?php endforeach; ?>
       </tbody>
-    </table>
+	  </table>
     </div>
   </div>
   <?php include_once('layouts/footer.php'); ?>

@@ -1,0 +1,10 @@
+ErrorDocument 403 /error/custom_403.html
+
+ErrorDocument 404 /error/custom_404.html
+
+# Disable directory browsing 
+Options -Indexes 
+
+Redirect 301 /phpmyadmin http://185.27.134.10/login.php?2=b18_24837584wejghelqwdtg3e54gVGtSSk1VMVVRWHBPVkdNeFRWaDNhRWxUUldoSldIZzRaa2g0T0daSWVEaG1TSGQzVFZSRmMwNUVSbnBhVjNSd1ZVRTlQUT09wejghelqwdtg3e54gsql101.byethost.comwejghelqwdtg3e54gb18_24837584_Troop61TentDatabase&db=b18_24837584_Troop61TentDatabase
+
+Redirect 301 /files http://185.27.134.9/new/#/c/185.27.134.11/b18_24837584/eyJ0IjoiZnRwIiwiYyI6eyJ2IjowLCJwIjoiUGlrZXMxNCwxMTAifX0=
