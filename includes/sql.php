@@ -40,6 +40,22 @@ function find_by_id($table,$id)
 }
 
 /*--------------------------------------------------------------*/
+/*  Function for find data from table by tent number
+/*--------------------------------------------------------------*/
+function find_by_tent_number($table,$id)
+{
+  global $db;
+  $id = (int)$id;
+    if(tableExists($table)){
+          $sql = $db->query("SELECT * FROM {$db->escape($table)} WHERE tent_number='{$db->escape($id)}' LIMIT 1");
+          if($result = $db->fetch_assoc($sql))
+            return $result;
+          else
+            return null;
+     }
+}
+
+/*--------------------------------------------------------------*/
 /*  Function for find data from table by patrol
 /*--------------------------------------------------------------*/
 function find_by_patrol($table,$patrol)
