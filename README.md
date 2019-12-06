@@ -1,5 +1,5 @@
 # Troop 61 Tent Database
-- - - -
+
 ![GitHub followers](https://img.shields.io/github/followers/jackveney?label=Follow&style=social)
 ![GitHub forks](https://img.shields.io/github/forks/jackveney/troop61tentdatabase?style=social)
 ![GitHub stars](https://img.shields.io/github/stars/jackveney/troop61tentdatabase?style=social)
