@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'Login';
+  $page_title = 'Login - Troop 61 Tent Database';
   ob_start();
   require_once('includes/load.php');
   if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
