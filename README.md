@@ -27,7 +27,7 @@
 ****
 
 
-1. Download the latest version
+1. Download the [latest](https://github.com/jackveney/Troop61TentDatabase/releases/latest) version
 
 2. Import/load troop61tentdatabase.sql into your mysql database. If you use phpmyadmin you can just import this file. This should set up the basic structure of the database system.
 
