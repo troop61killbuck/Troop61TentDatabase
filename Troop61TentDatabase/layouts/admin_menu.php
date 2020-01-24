@@ -81,4 +81,10 @@
      	 <li><a href="issue_list.php">Blank Issue Lists</a></li>
   	 </ul>
     </li>
+  <li>
+    <a href="github.php">
+      <i class="glyphicon glyphicon-home"></i>
+      <span>Database Version Info</span>
+    </a>
+  </li>
  </ul>
