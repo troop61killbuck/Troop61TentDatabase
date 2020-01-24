@@ -24,6 +24,4 @@
   define( 'DB_USER', 'username' );          // Set database user where it says 'username'
   define( 'DB_PASS', 'password' );          // Set database password where it says 'password'
   define( 'DB_NAME', 'databasename' );      // Set database name where it says 'databasename'
-
-$installed_version = "v1.7.0";
 ?>
