@@ -75,10 +75,10 @@ if(!$campouts_id){
 
 <script>
 function printDiv() {
-    newWin = window.open("report_print_campout.php?id=<?php echo $print;?>");
+    newWin = window.open("report_print_campout.php?id=<?php echo $print;?>", "", "width=800,height=900");
     setTimeout(function (){
     newWin.print();
     newWin.close();
-    window.location.reload();}, 250);
+    window.location.reload();}, 1000);
 }
 </script>

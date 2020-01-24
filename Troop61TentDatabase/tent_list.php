@@ -25,8 +25,9 @@
               <tr>
                 <th class="text-center" style="width: 10%;">Tent Number</th>
                 <th class="text-center" style="width: 10%;">Assigned to Patrol</th>
-                <th class="text-center" style="width: 40%;">Scouts In Tent</th>
-                <th class="text-center" style="width: 40%;">Issues With Tent</th>
+                <th class="text-center" style="width: 35%;">Scouts In Tent<br><small><font size="2">(Circle Person Taking Home)</font></small></th>
+                <th class="text-center" style="width: 35%;">Issues With Tent</th>
+		<th class="text-center" style="width: 10%;">Date Returned</th>
               </tr>
             </thead>
             <tbody>
@@ -36,31 +37,12 @@
                 <td class="text-center"> <?php echo remove_junk($tent['assigned_to_patrol']); ?></td>
                 <td class="text-center"></td>
                 <td class="text-center"></td>
+                <td class="text-center">___/___/___</td>
               </tr>
              <?php endforeach; ?>
             </tbody>
           </table>
-          <table class="table table-bordered" style="width:100%">
-            <thead>
-              <tr>
-                <th class="text-center" style="width: 25%;">Tent Number</th>
-                <th class="text-center" style="width: 25%;">Assigned to Patrol</th>
-                <th class="text-center" style="width: 25%;">Taken Home By</th>
-                <th class="text-center" style="width: 25%;">Date Returned</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($tents as $tent):?>
-              <tr>
-                <td class="text-center"><?php echo remove_junk($tent['tent_number']); ?></td>
-                <td class="text-center"> <?php echo remove_junk($tent['assigned_to_patrol']); ?></td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-              </tr>
-             <?php endforeach; ?>
-            </tbody>
-          </table>
-        </div>
+          </div>
       </div>
     </div>
   </div>
@@ -69,10 +51,10 @@
 
 <script>
 function printDiv() {
-   newWin = window.open("tent_print_list.php");
+   newWin = window.open("tent_print_list.php", "", "width=800,height=900");
     setTimeout(function (){
     newWin.print();
     newWin.close();
-    window.location.reload();}, 250);
+    window.location.reload();}, 1000);
 }
 </script>

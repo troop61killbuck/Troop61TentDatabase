@@ -63,11 +63,11 @@
 
 <script>
 function printDiv() {
-    newWin = window.open("tent_print_patrol.php?patrol=<?php echo $print;?>");
+    newWin = window.open("tent_print_patrol.php?patrol=<?php echo $print;?>", "", "width=800,height=900");
     setTimeout(function (){
     newWin.print();
     newWin.close();
-    window.location.reload();}, 250);
+    window.location.reload();}, 1000);
 }
 </script>
 

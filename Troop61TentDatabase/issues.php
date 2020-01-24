@@ -68,10 +68,10 @@
 
 <script>
 function printDiv() {
-    newWin = window.open("issue_print.php");
+    newWin = window.open("issue_print.php", "", "width=800,height=900");
     setTimeout(function (){
     newWin.print();
     newWin.close();
-    window.location.reload();}, 250);
+    window.location.reload();}, 1000);
 }
 </script>

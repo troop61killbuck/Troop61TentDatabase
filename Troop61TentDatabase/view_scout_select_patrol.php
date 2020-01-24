@@ -34,13 +34,3 @@
   </div>
   <?php include_once('layouts/footer.php'); ?>
 
-<script>
-function printDiv() {
-    newWin = window.open("tent_print.php");
-    setTimeout(function (){
-    newWin.print();
-    newWin.close();
-    window.location.reload();}, 250);
-}
-</script>
-
