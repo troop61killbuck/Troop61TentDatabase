@@ -1,3 +1,3 @@
 <?php
-$installed_version = "v1.5.3";
+$installed_version = "v1.7.1";
 ?>
