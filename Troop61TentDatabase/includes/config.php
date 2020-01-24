@@ -18,7 +18,6 @@
 |--------------------------------------------------------------------------
 | Author: Jack Veney - Troop 61
 | Project Name: Troop 61 Tent Database
-| Version: v1.6.0
 | Troop Website: https://www.troop61killbuck.org/
 */
   define( 'DB_HOST', 'host' );              // Set database host where it says 'host'
@@ -26,4 +25,5 @@
   define( 'DB_PASS', 'password' );          // Set database password where it says 'password'
   define( 'DB_NAME', 'databasename' );      // Set database name where it says 'databasename'
 
+$installed_version = "v1.7.0";
 ?>
