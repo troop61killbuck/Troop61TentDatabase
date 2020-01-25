@@ -83,7 +83,7 @@
     </li>
   <li>
     <a href="github.php">
-      <i class="glyphicon glyphicon-home"></i>
+      <i class="glyphicon glyphicon-info-sign"></i>
       <span>Database Version Info</span>
     </a>
   </li>
