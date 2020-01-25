@@ -26,6 +26,8 @@ $github = file_get_contents('https://api.github.com/repos/jackveney/Troop61TentD
 		Github Latest Release Version: <?php $version = json_decode($github);
 		echo $version->tag_name; ?>
 		<br>
+			 &emsp; &emsp; Version Info: <?php echo $version->body; ?>
+		<br>
 		<br>
 		Installed Version: <?php echo $installed_version; ?>
 	<br><br>
