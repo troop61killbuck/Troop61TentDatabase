@@ -37,7 +37,7 @@ $github = file_get_contents('https://api.github.com/repos/jackveney/Troop61TentD
             <font size="4" color="white"><span class="label label-danger"><a href="https://github.com/jackveney/Troop61TentDatabase/releases/latest" target="_blank"><font color="white"><?php echo "Database needs updated"; ?></font></a></span></font>
           <?php endif;?>
 		<br><br>
-			&emsp; &emsp; <b>** Remember to not override the includes/config.php and includes/dbConfig.pgp file unless told to do so**</b>
+			&emsp; &emsp; <b>** Remember to update the includes/config.php and includes/dbConfig.php files when updating the database**</b>
 
      </div>
     </div>
