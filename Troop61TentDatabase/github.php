@@ -23,20 +23,21 @@ $github = file_get_contents('https://api.github.com/repos/jackveney/Troop61TentD
        </strong>
       </div>
      <div class="panel-body">
-		Github Latest Release Version: <?php $version = json_decode($github);
+		<b>Github Latest Release Version:</b> <?php $version = json_decode($github);
 		echo $version->tag_name; ?>
 		<br>
-			 &emsp; &emsp; Version Info: <?php echo $version->body; ?>
+			 &emsp; &emsp; <b>Version Changelog:</b> <?php echo $version->body; ?>
 		<br>
 		<br>
-		Installed Version: <?php echo $installed_version; ?>
+		<b>Installed Version:</b> <?php echo $installed_version; ?>
 	<br><br>
 <?php if($version->tag_name === $installed_version): ?>
             <font size="4"><span class="label label-success"><?php echo "Database is up to date"; ?></span></font>
           <?php else: ?>
             <font size="4" color="white"><span class="label label-danger"><a href="https://github.com/jackveney/Troop61TentDatabase/releases/latest" target="_blank"><font color="white"><?php echo "Database needs updated"; ?></font></a></span></font>
           <?php endif;?>
-
+		<br><br>
+			&emsp; &emsp; <b>** Remember to not override the includes/config.php and includes/dbConfig.pgp file unless told to do so**</b>
 
      </div>
     </div>
